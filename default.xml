@@ -21,9 +21,13 @@
            fetch="https://github.com/ProjectMaterium"
            revision="materium-v1" />
 
+  <remote  name="kasumi"
+           fetch="https://github.com/ProjectKasumi"
+           revision="kasumi-v1" />
+
   <remote  name="devices"
-           fetch="https://github.com/Materium-Devices"
-           revision="materium-v1" />
+           fetch="https://github.com/Kasumi-Devices"
+           revision="kasumi-v1" />
 
 
   <default revision="refs/heads/lineage-18.1"
@@ -33,7 +37,7 @@
 
   <!-- AOSP Projects -->
 
-  <project path="build/make" name="android_build" groups="pdk" remote="materium" >
+  <project path="build/make" name="android_build" groups="pdk" remote="kasumi" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -585,7 +589,7 @@
   <project path="packages/apps/SafetyRegulatoryInfo" name="LineageOS/android_packages_apps_SafetyRegulatoryInfo" groups="pdk-fs" />
   <project path="packages/apps/SampleLocationAttribution" name="platform/packages/apps/SampleLocationAttribution" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/SecureElement" name="LineageOS/android_packages_apps_SecureElement" groups="apps_se,pdk-fs" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="kasumi" />
   <project path="packages/apps/SettingsIntelligence" name="LineageOS/android_packages_apps_SettingsIntelligence" groups="pdk-fs" />
   <project path="packages/apps/Stk" name="LineageOS/android_packages_apps_Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/StorageManager" name="LineageOS/android_packages_apps_StorageManager" groups="pdk-fs" />
@@ -792,6 +796,7 @@
 
   <include name="snippets/lineage.xml" />
   <include name="snippets/materium.xml" />
+  <include name="snippets/kasumi.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>

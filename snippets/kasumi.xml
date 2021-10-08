@@ -1,0 +1,4 @@
+<manifest>
+	<project name="android_vendor_lawnchair" path="vendor/lawnchair" remote="kasumi" />
+	<project name="android_vendor_prebuilts" path="vendor/prebuilts" remote="kasumi" />
+</manifest>
