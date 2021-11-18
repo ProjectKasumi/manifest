@@ -279,7 +279,6 @@
   <project path="external/libusb" name="platform/external/libusb" groups="pdk" remote="aosp" />
   <project path="external/libutf" name="platform/external/libutf" groups="pdk" remote="aosp" />
   <project path="external/libvpx" name="android_external_libvpx" groups="pdk" remote="materium" />
-  <project path="external/libvterm" name="platform/external/libvterm" groups="pdk" remote="aosp" />
   <project path="external/libxaac" name="platform/external/libxaac" groups="pdk" remote="aosp" />
   <project path="external/libxkbcommon" name="platform/external/libxkbcommon" groups="pdk" remote="aosp" />
   <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,libxml2" remote="aosp" />
@@ -366,7 +365,7 @@
   <project path="external/rappor" name="platform/external/rappor" groups="pdk" remote="aosp" />
   <project path="external/replicaisland" name="platform/external/replicaisland" groups="pdk" remote="aosp" />
   <project path="external/rmi4utils" name="platform/external/rmi4utils" groups="pdk" remote="aosp" />
-  <project path="external/robolectric-shadows" name="platform/external/robolectric-shadows" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
+  <project path="external/robolectric-shadows" name="LineageOS/android_external_robolectric-shadows" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/roboto-fonts" name="platform/external/roboto-fonts" groups="pdk" remote="aosp" />
   <project path="external/rootdev" name="platform/external/rootdev" groups="pdk" remote="aosp" />
   <project path="external/Reactive-Extensions/RxCpp" name="platform/external/Reactive-Extensions/RxCpp" groups="pdk" remote="aosp" />
@@ -594,7 +593,6 @@
   <project path="packages/apps/Stk" name="LineageOS/android_packages_apps_Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/StorageManager" name="LineageOS/android_packages_apps_StorageManager" groups="pdk-fs" />
   <project path="packages/apps/Tag" name="LineageOS/android_packages_apps_Tag" groups="pdk-fs" />
-  <project path="packages/apps/Terminal" name="LineageOS/android_packages_apps_Terminal" groups="pdk-fs" />
   <project path="packages/apps/Test/connectivity" name="platform/packages/apps/Test/connectivity" groups="pdk" remote="aosp" />
   <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="materium" groups="pdk-fs" />
   <project path="packages/apps/Traceur" name="LineageOS/android_packages_apps_Traceur" groups="pdk-fs" />
