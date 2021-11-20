@@ -1,3 +1,3 @@
 <manifest>
-	<project path="vendor/priv" name="ProjectMaterium/android_vendor_priv" revision="master" remote="private" />
+	<project path="vendor/priv" name="ProjectMaterium/android_vendor_priv" revision="old" remote="private" />
 </manifest>
