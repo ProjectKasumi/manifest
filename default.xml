@@ -18,7 +18,7 @@
            fetch="https://gitlab.com/" />
 
   <remote  name="materium"
-           fetch="https://github.com/ProjectMaterium"
+           fetch="https://github.com/Materium-Old-11"
            revision="materium-v1" />
 
   <remote  name="kasumi"
