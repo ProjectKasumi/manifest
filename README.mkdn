@@ -1,4 +1,5 @@
 <div align="center">
+![KasumiBanner.png](https://dl.ayokaacr.tk/5:/Not%20ROM/KasumiBanner.png)
 <h1>Project Kasumi</h1>
 </br>
 <strong><i> Another weebified custom ROM aiming to be a home for weebs. </i></strong>
@@ -31,6 +32,7 @@ Credits
 - [**Project Sakura**](https://github.com/ProjectSakura)
 - [**Weeb Projekt**](https://github.com/WeebProjekt)
 - [**Wave Project**](https://github.com/Wave-Project)
+- [**PixelBoot**](https://github.com/PixelBoot)
 *********
 <a href="https://twitter.com/ProjectKasumi_">
 <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge">
