@@ -1,5 +1,5 @@
 <div align="center">
-![KasumiBanner.png](https://dl.ayokaacr.tk/5:/Not%20ROM/KasumiBanner.png)
+<img src="https://dl.ayokaacr.tk/5:/Not%20ROM/KasumiBanner.png" />
 <h1>Project Kasumi</h1>
 </br>
 <strong><i> Another weebified custom ROM aiming to be a home for weebs. </i></strong>
