@@ -7,11 +7,15 @@
 <i> Based on Project Materium - Optimized LineageOS-based Android aftermarket firmware with extra features, developed by people all over the world. </i>
 </br>
 
+-----
+
 Getting started
 ---------------
 To get started with Android/Project Kasumi, you'll need to get
 familiar with [Repo](https://source.android.com/source/using-repo.html) and [Version Control with Git](https://source.android.com/source/version-control.html).
-  
+
+-----
+
 Credits
 -------
 - [**Project Materium**](https://github.com/ProjectMaterium)
@@ -30,20 +34,22 @@ Credits
 - [**crDroid**](https://github.com/crDroidAndroid)
 - [**Syberia Project**](https://github.com/syberia-project)
 - [**Project Sakura**](https://github.com/ProjectSakura)
-- [**Weeb Projekt**](https://github.com/WeebProjekt)
+- [**Weeb Projekt**](https://github.com/WeebProject)
 - [**Wave Project**](https://github.com/Wave-Project)
 - [**PixelBoot**](https://github.com/PixelBoot)
 *********
-<a href="https://twitter.com/ProjectKasumi_">
+<a href="https://twitter.com/Kasumi_Project">
 <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge">
 </a>
 <a href="https://t.me/ProjectKasumi">
 <img src="https://img.shields.io/badge/Telegram-Chat-green?style=for-the-badge">
 </a>
 
+-----
+
 To initialize your local repository using your trees, use a command like this:  
 ```
-repo init --depth=1 -u git://github.com/ProjectKasumi/android.git -b kasumi-v1
+repo init --depth=1 -u git://git.polycule.co/ProjectKasumi/android/manifest.git -b kasumi-v1
 ```
 Then to sync up:
 ```
@@ -56,4 +62,68 @@ lunch kasumi_<devicecodename>-userdebug
 mka bandori
 ```
 
-Also remember to check [build flags](https://github.com/ProjectKasumi/android_build_flags) for customizing your build further (E.g. shipping with Google Sans font by default).
+Also remember to check [build flags](https://git.polycule.co/ProjectKasumi/android/build_flags) for customizing your build further (E.g. shipping with Lawnchair instead of Trebuchet).
+
+-----
+
+Submitting Patches
+------------------
+
+Patches are always welcome! To submit one, email the lead developer
+at windowz414[at]projectkasumi[dot]xyz with your patch in this format;
+
+</div>
+
+Subject: `{<relevant repo name>} [PATCH] <commit subject>`
+
+```
+<commit description>
+
+Signed-off-by: Your Name <user@example.com>
+
+---
+<diff of your patch>
+```
+
+Here's an example for you;
+
+Subject: `{vendor_kasumi} [PATCH] config/bootanimation: Filter space out when res is defined`
+
+```
+* We don't know if the maintainer added space after definition in
+  tree. (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
+                                 (Right here.) ^~~~~~~~~~~~~~~
+  This causes COPY_FILES to malfunction, so delete everything after
+  first space out. There shouldn't be a space before the actual
+  value anyway, Rest In Pepperoni if there is. xD
+
+Signed-off-by: Beru Shinsetsu <windowz414@gnuweeb.org>
+
+---
+ config/bootanimation.mk | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/config/bootanimation.mk b/config/bootanimation.mk
+index e75a716c..30cfc404 100644
+--- a/config/bootanimation.mk
++++ b/config/bootanimation.mk
+@@ -19,6 +19,13 @@ ifeq ($(TARGET_CUSTOM_BOOT_ANIMATION),)
+          $(warning TARGET_BOOT_ANIMATION_RES is invalid or undefined, using generic bootanimation)
+          TARGET_BOOT_ANIMATION_RES := 720
+      endif
++
++     # We don't know if the maintainer added space after definition in tree.
++     # (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
++     # This causes COPY_FILES to malfunction, so delete everything after
++     # first space out. There shouldn't be a space before the actual value
++     # anyway, Rest In Pepperoni if there is. xD
++     TARGET_BOOT_ANIMATION_RES := $(shell echo $(TARGET_BOOT_ANIMATION_RES) | sed -e 's/ .*//')
+      TARGET_CUSTOM_BOOT_ANIMATION := vendor/kasumi/prebuilt/common/media/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip
+ endif
+ 
+```
+
+Not necessary but you might as well want to attach the patch file in
+the email just in case. :)
+
+Example patch: https://git.polycule.co/ProjectKasumi/android/vendor_kasumi/commit/0b596f8eeec5ae5b0e74e88bdbdbc5a1b5953c1d.patch

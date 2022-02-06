@@ -1,5 +1,5 @@
 <manifest>
 	<project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" />
-	<project name="android_vendor_lawnchair" path="vendor/lawnchair" remote="kasumi" />
-	<project name="android_vendor_prebuilts" path="vendor/prebuilts" remote="kasumi" />
+	<project name="android/vendor_lawnchair" path="vendor/lawnchair" remote="yuki-no-git" />
+	<project name="android/vendor_prebuilts" path="vendor/prebuilts" remote="yuki-no-git" />
 </manifest>
