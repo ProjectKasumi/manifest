@@ -17,6 +17,18 @@
            remote="github"
            sync-c="true"
            sync-j="4" />
+  
+  <remote name="materium"
+	  fetch="https://github.com/ProjectMaterium"
+	  revision="materium-v2" />
+  
+  <remote name="materium-priv"
+	  fetch="ssh://git@github.com/ProjectMaterium"
+	  revision="materium-v2" />
+  
+  <remote name="vdk"
+	  fetch="https://github.com/ProjectMaterium"
+	  revision="vdk-devel" />
 
   <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r1" />
   <contactinfo bugurl="go/repo-bug" />
@@ -1050,6 +1062,8 @@
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" remote="aosp" />
 
   <include name="snippets/lineage.xml" />
+  <include name="snippets/vdk.xml" />
+  <include name="snippets/priv.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>

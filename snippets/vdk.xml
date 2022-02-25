@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<project name="android_device_mediatek_sepolicy_vndr" path="device/mediatek/sepolicy_vndr" remote="vdk" />
+	<project name="android_packages_apps_MtkFMRadio" path="packages/apps/MtkFMRadio" remote="vdk" />
+</manifest>
