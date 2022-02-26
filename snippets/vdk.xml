@@ -2,4 +2,5 @@
 <manifest>
 	<project name="android_device_mediatek_sepolicy_vndr" path="device/mediatek/sepolicy_vndr" remote="vdk" />
 	<project name="android_packages_apps_MtkFMRadio" path="packages/apps/MtkFMRadio" remote="vdk" />
+	<project name="android_materium_ci" path="materium/ci" remote="vdk" revision="master" />
 </manifest>
