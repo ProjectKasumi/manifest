@@ -21,10 +21,6 @@
            fetch="https://github.com/Materium-Old-11"
            revision="materium-v1" />
 
-  <remote  name="kasumi"
-           fetch="https://github.com/ProjectKasumi"
-           revision="kasumi-v1" />
-
   <remote  name="devices"
            fetch="https://github.com/Kasumi-Devices"
            revision="kasumi-v1" />
