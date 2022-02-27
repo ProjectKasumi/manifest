@@ -22,6 +22,10 @@
 	  fetch="https://github.com/ProjectMaterium"
 	  revision="materium-v2" />
   
+  <remote name="mat-infra"
+	  fetch="https://github.com/ProjectMaterium"
+	  revision="master" />
+  
   <remote name="materium-priv"
 	  fetch="ssh://git@github.com/ProjectMaterium"
 	  revision="materium-v2" />
