@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://dl.ayokaacr.tk/5:/Not%20ROM/KasumiBanner.png" />
+<img src="https://dl.ayokaacr.net/5:/Not%20ROM/KasumiBanner.png" />
 <h1>Project Kasumi</h1>
 </br>
 <strong><i> Another weebified custom ROM aiming to be a home for weebs. </i></strong>
@@ -37,12 +37,13 @@ Credits
 - [**Weeb Projekt**](https://github.com/WeebProject)
 - [**Wave Project**](https://github.com/Wave-Project)
 - [**PixelBoot**](https://github.com/PixelBoot)
+- [**halogenOS**](https://github.com/halogenOS)
 *********
-<a href="https://twitter.com/Kasumi_Project">
+<a href="https://twitter.com/ProjectKasumi_">
 <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge">
 </a>
 <a href="https://t.me/ProjectKasumi">
-<img src="https://img.shields.io/badge/Telegram-Chat-green?style=for-the-badge">
+<img src="https://img.shields.io/badge/Telegram-Channel-green?style=for-the-badge">
 </a>
 
 -----
@@ -51,15 +52,18 @@ To initialize your local repository using your trees, use a command like this:
 ```
 repo init --depth=1 -u git://git.polycule.co/ProjectKasumi/android/manifest.git -b kasumi-v1
 ```
-Then to sync up:
+Now we need to sync just enough repos to get "Kasumi's Tools" up:
 ```
-repo sync
+repo sync build/make external/tuuru vendor/kasumi
+```
+Then, to sync full source up:
+```
+. build/envsetup.sh
+reposync auto
 ```
 And to start build:
 ```
-. build/envsetup.sh
-lunch kasumi_<devicecodename>-userdebug
-mka bandori
+play live kasumi_<devicecodename>
 ```
 
 Also remember to check [build flags](https://git.polycule.co/ProjectKasumi/android/build_flags) for customizing your build further (E.g. shipping with Lawnchair instead of Trebuchet).
