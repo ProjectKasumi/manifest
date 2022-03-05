@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <project path="external/zlib-ng" name="android_external_zlib-ng" groups="pdk" remote="materium" />
 </manifest>
