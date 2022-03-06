@@ -25,7 +25,7 @@
         <linkfile src="target" dest="build/target" />
         <linkfile src="tools" dest="build/tools" />
     </project>
-    <project path="external/tuuru" name="external_tuuru" remote="kasumi" revision="master" upstream="https://git.halogemos.org/halogenOS/android_external_xos|XOS-12.0" />
+    <project path="external/tuuru" name="external_tuuru" remote="kasumi" revision="master" upstream="https://git.halogenos.org/halogenOS/android_external_xos|XOS-12.0" />
     <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_vendor_materium|materium-v2" />
     <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_packages_apps_Settings|materium-v2" />
     <project path="packages/apps/Backgrounds" name="packages_apps_Backgrounds" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_packages_apps_Backgrounds|materium-v2" />
