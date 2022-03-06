@@ -35,8 +35,8 @@
 	  revision="vdk-devel" />
   
   <remote name="devices"
-	  fetch="https://github.com/Materium-Devices"
-	  revision="materium-v2" />
+	  fetch="https://github.com/Kasumi-Devices"
+	  revision="staging/kasumi-v2" />
 
   <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r1" />
   <contactinfo bugurl="go/repo-bug" />
