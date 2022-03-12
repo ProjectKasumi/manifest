@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-    <!-- Define remotes as we need - Independent from default ones. -->
-    <remote  name="pixel"
-             fetch="https://github.com/PixelExperience"
-             revision="twelve"
-             review="gerrit.pixelexperience.org" />
-
     <!-- Now to the projects -->
     <!-- Hardware repos for MSM8996 platform doesn't exist from
          Lineage/Materium anyway so also fetch them from PE. -->
