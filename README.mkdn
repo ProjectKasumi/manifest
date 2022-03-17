@@ -50,7 +50,7 @@ Credits
 
 To initialize your local repository using your trees, use a command like this:  
 ```
-repo init --depth=1 -u git://git.polycule.co/ProjectKasumi/android/manifest.git -b kasumi-v1
+repo init --depth=1 -u https://git.polycule.co/ProjectKasumi/android/manifest.git -b kasumi-v1
 ```
 Now we need to sync just enough repos to get "Kasumi's Tools" up:
 ```
