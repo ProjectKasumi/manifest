@@ -8,7 +8,6 @@
     <remove-project name="android_vendor_materium" />
     <remove-project name="android_packages_apps_Settings" />
     <remove-project name="android_packages_apps_Backgrounds" />
-    <remove-project name="LineageOS/android_frameworks_opt_telephony" />
 
     <!-- Then define Kasumi remote. -->
     <remote name="kasumi"
@@ -30,6 +29,5 @@
     <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_vendor_materium|materium-v2" />
     <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_packages_apps_Settings|materium-v2" />
     <project path="packages/apps/Backgrounds" name="packages_apps_Backgrounds" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_packages_apps_Backgrounds|vdk-devel" />
-    <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="kasumi" ipstream="https://github.com/LineageOS/android_frameworks_opt_telephony|lineage-19.0" />
 
 </manifest>
