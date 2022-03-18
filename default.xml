@@ -1073,6 +1073,7 @@
   <include name="snippets/priv.xml" />
   <include name="snippets/materium.xml" />
   <include name="snippets/kasumi.xml" />
+  <include name="snippets/kasumi_ext.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
