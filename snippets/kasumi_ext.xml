@@ -4,9 +4,12 @@
     <!-- Now to the projects -->
     <!-- Hardware repos for MSM8996 platform doesn't exist from
          Lineage/Materium anyway so also fetch them from PE. -->
-    <project path="hardware/qcom-caf/msm8996/audio" name="hardware_qcom-caf_msm8996_audio" remote="pixel" />
-    <project path="hardware/qcom-caf/msm8996/display" name="hardware_qcom-caf_msm8996_display" remote="pixel" />
-    <project path="hardware/qcom-caf/msm8996/media" name="hardware_qcom-caf_msm8996_media" remote="pixel" />
-    <project path="system/qcom" name="system_qcom" remote="pixel" />
+    <remote  name="pixelgh"
+             fetch="https://github.com/PixelExperience"
+             revision="twelve" />
+    <project path="hardware/qcom-caf/msm8996/audio" name="hardware_qcom-caf_msm8996_audio" remote="pixelgh" />
+    <project path="hardware/qcom-caf/msm8996/display" name="hardware_qcom-caf_msm8996_display" remote="pixelgh" />
+    <project path="hardware/qcom-caf/msm8996/media" name="hardware_qcom-caf_msm8996_media" remote="pixelgh" />
+    <project path="system/qcom" name="system_qcom" remote="pixelgh" />
 
 </manifest>
