@@ -1,6 +1,6 @@
 <manifest>
 	<project name="android/external_tuuru" path="external/tuuru" remote="yuki-no-git" revision="kasumi-v1" upstream="https://git.halogenos.org/halogenOS/android_external_xos|XOS-12.0" />
-	<project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" />
+	<!--<project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" />-->
 	<project name="android/vendor_lawnchair" path="vendor/lawnchair" remote="yuki-no-git" />
 	<project name="android/vendor_prebuilts" path="vendor/prebuilts" remote="yuki-no-git" />
 </manifest>
