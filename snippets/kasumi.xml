@@ -3,9 +3,9 @@
 
     <!-- Remove projects we need to remove. -->
     <remove-project name="android" />
-    <remove-project name="android_materium_ci" />
+    <remove-project name="android_droid-ng_ci" />
     <remove-project name="android_build" />
-    <remove-project name="android_vendor_materium" />
+    <remove-project name="android_vendor_ng" />
     <remove-project name="android_packages_apps_Settings" />
     <remove-project name="android_packages_apps_Backgrounds" />
 
@@ -15,8 +15,8 @@
             revision="staging/kasumi-v2" />
 
     <!-- Now to the projects we need. -->
-    <project path="android" name="manifest" remote="kasumi" upstream="https://github.com/ProjectMaterium/android|materium-v2" />
-    <project path="build/make" name="build_make" groups="pdk" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_build|materium-v2" >
+    <project path="android" name="manifest" remote="kasumi" upstream="https://github.com/droid-ng/android|ng-v2" />
+    <project path="build/make" name="build_make" groups="pdk" remote="kasumi" upstream="https://github.com/droid-ng/android_build|ng-v2" >
         <copyfile src="core/root.mk" dest="Makefile" />
         <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
         <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -26,8 +26,8 @@
         <linkfile src="tools" dest="build/tools" />
     </project>
     <project path="external/tuuru" name="external_tuuru" remote="kasumi" revision="master" upstream="https://git.halogenos.org/halogenOS/android_external_xos|XOS-12.0" />
-    <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_vendor_materium|materium-v2" />
-    <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_packages_apps_Settings|materium-v2" />
-    <project path="packages/apps/Backgrounds" name="packages_apps_Backgrounds" remote="kasumi" upstream="https://github.com/ProjectMaterium/android_packages_apps_Backgrounds|vdk-devel" />
+    <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" upstream="https://github.com/droid-ng/android_vendor_ng|ng-v2" />
+    <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="kasumi" upstream="https://github.com/droid-ng/android_packages_apps_Settings|ng-v2" />
+    <project path="packages/apps/Backgrounds" name="packages_apps_Backgrounds" remote="kasumi" upstream="https://github.com/droid-ng/android_packages_apps_Backgrounds|vdk-devel" />
 
 </manifest>
