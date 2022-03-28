@@ -2,8 +2,8 @@
 <manifest>
 	<project name="android_device_mediatek_sepolicy_vndr" path="device/mediatek/sepolicy_vndr" remote="vdk" />
 	<project name="android_packages_apps_MtkFMRadio" path="packages/apps/MtkFMRadio" remote="vdk" />
-	<project name="android_packages_resources_MateriumTranslations" path="packages/resources/MateriumTranslations" remote="materium" />
-	<project name="android_materium_ci" path="materium/ci" remote="mat-infra" />
-	<project name="android_materium_frontpage" path="materium/frontpage" remote="mat-infra" />
-	<project name="android_materium_statsapi" path="materium/statsapi" remote="mat-infra" />
+	<project name="android_packages_resources_NgTranslations" path="packages/resources/NgTranslations" remote="ng" />
+	<project name="android_droid-ng_ci" path="droid-ng/ci" remote="ng-infra" />
+	<project name="android_droid-ng_frontpage" path="droid-ng/frontpage" remote="ng-infra" />
+	<project name="android_droid-ng_statsapi" path="droid-ng/statsapi" remote="ng-infra" />
 </manifest>

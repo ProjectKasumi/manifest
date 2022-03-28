@@ -18,32 +18,32 @@
            sync-c="true"
            sync-j="4" />
   
-  <remote name="materium"
-	  fetch="https://github.com/ProjectMaterium"
-	  revision="materium-v2" />
+  <remote name="ng"
+	  fetch="https://github.com/droid-ng"
+	  revision="ng-v2" />
   
-  <remote name="mat-infra"
-	  fetch="https://github.com/ProjectMaterium"
+  <remote name="ng-infra"
+	  fetch="https://github.com/droid-ng"
 	  revision="master" />
   
-  <remote name="materium-priv"
-	  fetch="ssh://git@github.com/ProjectMaterium"
-	  revision="materium-v2" />
+  <remote name="ng-priv"
+	  fetch="ssh://git@github.com/droid-ng"
+	  revision="ng-v2" />
   
   <remote name="vdk"
-	  fetch="https://github.com/ProjectMaterium"
+	  fetch="https://github.com/droid-ng"
 	  revision="vdk-devel" />
   
   <remote name="devices"
-	  fetch="https://github.com/Materium-Devices"
-	  revision="materium-v2" />
+	  fetch="https://github.com/devices-ng"
+	  revision="ng-v2" />
 
   <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r1" />
   <contactinfo bugurl="go/repo-bug" />
 
   <!-- AOSP Projects -->
 
-  <project path="build/make" name="android_build" groups="pdk" remote="materium" >
+  <project path="build/make" name="android_build" groups="pdk" remote="ng" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -59,19 +59,19 @@
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" remote="aosp" />
   <project path="build/pesto" name="platform/build/pesto" groups="pdk" remote="aosp" />
-  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="materium" >
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="ng" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="art" name="android_art" groups="pdk" remote="materium" />
-  <project path="bionic" name="android_bionic" groups="pdk" remote="materium" />
-  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" remote="materium" />
+  <project path="art" name="android_art" groups="pdk" remote="ng" />
+  <project path="bionic" name="android_bionic" groups="pdk" remote="ng" />
+  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" remote="ng" />
   <project path="bootable/libbootloader" name="platform/bootable/libbootloader" groups="vts,pdk" remote="aosp" />
   <project path="compatibility/cdd" name="platform/compatibility/cdd" groups="pdk" remote="aosp" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="developers/build" name="platform/developers/build" groups="developers,pdk" remote="aosp" />
-  <project path="development" name="android_development" groups="developers,pdk-cw-fs,pdk-fs" remote="materium" />
+  <project path="development" name="android_development" groups="developers,pdk-cw-fs,pdk-fs" remote="ng" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk" remote="aosp" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" remote="aosp" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" remote="aosp" />
@@ -111,7 +111,7 @@
   <project path="external/apache-http" name="platform/external/apache-http" groups="pdk" remote="aosp" />
   <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" remote="aosp" />
   <project path="external/arm-neon-tests" name="platform/external/arm-neon-tests" groups="vendor" remote="aosp" />
-  <project path="external/arm-optimized-routines" name="android_external_arm-optimized-routines" groups="pdk" remote="materium" />
+  <project path="external/arm-optimized-routines" name="android_external_arm-optimized-routines" groups="pdk" remote="ng" />
   <project path="external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" groups="pdk" remote="aosp" />
   <project path="external/auto" name="platform/external/auto" groups="pdk" remote="aosp" />
   <project path="external/autotest" name="platform/external/autotest" groups="pdk-fs" remote="aosp" />
@@ -250,7 +250,7 @@
   <project path="external/javassist" name="platform/external/javassist" groups="pdk" remote="aosp" />
   <project path="external/jcommander" name="platform/external/jcommander" groups="pdk" remote="aosp" />
   <project path="external/jdiff" name="platform/external/jdiff" groups="pdk" remote="aosp" />
-  <project path="external/jemalloc_new" name="android_external_jemalloc_new" groups="pdk" remote="materium" />
+  <project path="external/jemalloc_new" name="android_external_jemalloc_new" groups="pdk" remote="ng" />
   <project path="external/jimfs" name="platform/external/jimfs" groups="pdk" remote="aosp" />
   <project path="external/jline" name="platform/external/jline" groups="pdk,tradefed,pdk-fs" remote="aosp" />
   <project path="external/jsilver" name="platform/external/jsilver" groups="pdk" remote="aosp" />
@@ -303,19 +303,19 @@
   <project path="external/libopus" name="platform/external/libopus" groups="pdk" remote="aosp" />
   <project path="external/libpcap" name="platform/external/libpcap" groups="pdk" remote="aosp" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk" remote="aosp" />
-  <project path="external/libpng" name="android_external_libpng" groups="pdk" remote="materium" />
+  <project path="external/libpng" name="android_external_libpng" groups="pdk" remote="ng" />
   <project path="external/libprotobuf-mutator" name="platform/external/libprotobuf-mutator" groups="pdk" remote="aosp" />
   <project path="external/libsrtp2" name="platform/external/libsrtp2" groups="pdk" remote="aosp" />
   <project path="external/libtextclassifier" name="platform/external/libtextclassifier" groups="pdk" remote="aosp" />
   <project path="external/libusb" name="platform/external/libusb" groups="pdk" remote="aosp" />
   <project path="external/libutf" name="platform/external/libutf" groups="pdk" remote="aosp" />
-  <project path="external/libvpx" name="android_external_libvpx" groups="pdk" remote="materium" />
+  <project path="external/libvpx" name="android_external_libvpx" groups="pdk" remote="ng" />
   <project path="external/libwebm" name="platform/external/libwebm" groups="pdk" remote="aosp" />
   <project path="external/libwebsockets" name="platform/external/libwebsockets" groups="pdk" remote="aosp" />
   <project path="external/libxaac" name="platform/external/libxaac" groups="pdk" remote="aosp" />
   <project path="external/libxkbcommon" name="platform/external/libxkbcommon" groups="pdk" remote="aosp" />
   <project path="external/libxml2" name="platform/external/libxml2" groups="pdk,libxml2" remote="aosp" />
-  <project path="external/libyuv" name="android_external_libyuv" groups="pdk,libyuv" remote="materium" />
+  <project path="external/libyuv" name="android_external_libyuv" groups="pdk,libyuv" remote="ng" />
   <project path="external/linux-kselftest" name="platform/external/linux-kselftest" groups="vts,pdk" clone-depth="1" remote="aosp" />
   <project path="external/llvm" name="platform/external/llvm" groups="pdk" remote="aosp" />
   <project path="external/llvm-project" name="toolchain/llvm-project" groups="pdk" remote="aosp" />
@@ -363,7 +363,7 @@
   <project path="external/OpenCL-CTS" name="platform/external/OpenCL-CTS" remote="aosp" />
   <project path="external/OpenCSD" name="platform/external/OpenCSD" groups="pdk" remote="aosp" />
   <project path="external/openscreen" name="platform/external/openscreen" groups="pdk" remote="aosp" />
-  <project path="external/openssh" name="android_external_openssh" groups="pdk" remote="materium" />
+  <project path="external/openssh" name="android_external_openssh" groups="pdk" remote="ng" />
   <project path="external/oss-fuzz" name="platform/external/oss-fuzz" groups="pdk" remote="aosp" />
   <project path="external/owasp/sanitizer" name="platform/external/owasp/sanitizer" groups="pdk" remote="aosp" />
   <project path="external/parameter-framework" name="platform/external/parameter-framework" groups="pdk" remote="aosp" />
@@ -611,7 +611,7 @@
   <project path="external/sonic" name="platform/external/sonic" groups="pdk" remote="aosp" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" remote="aosp" />
   <project path="external/speex" name="platform/external/speex" groups="pdk" remote="aosp" />
-  <project path="external/sqlite" name="android_external_sqlite" groups="pdk" remote="materium" />
+  <project path="external/sqlite" name="android_external_sqlite" groups="pdk" remote="ng" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" remote="aosp" />
   <project path="external/starlark-go" name="platform/external/starlark-go" groups="pdk" remote="aosp" />
   <project path="external/strace" name="platform/external/strace" groups="pdk" remote="aosp" />
@@ -663,7 +663,7 @@
   <project path="external/zstd" name="platform/external/zstd" groups="pdk" remote="aosp" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" remote="aosp" />
   <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="vdk" />
-  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="materium" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="ng" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" remote="aosp" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" remote="aosp" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" remote="aosp" />
@@ -674,10 +674,10 @@
   <project path="frameworks/libs/native_bridge_support" name="platform/frameworks/libs/native_bridge_support" groups="pdk" remote="aosp" />
   <project path="frameworks/libs/net" name="platform/frameworks/libs/net" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/libs/service_entitlement" name="platform/frameworks/libs/service_entitlement" groups="pdk" remote="aosp" />
-  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs" remote="materium" />
+  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs" remote="ng" />
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="frameworks/native" name="android_frameworks_native" groups="pdk" remote="materium" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk" remote="ng" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" groups="pdk-fs" remote="aosp" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/opt/car/services" name="platform/frameworks/opt/car/services" groups="pdk-fs" remote="aosp" />
@@ -691,7 +691,7 @@
   <project path="frameworks/opt/net/wifi" name="platform/frameworks/opt/net/wifi" groups="pdk" remote="aosp" />
   <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/opt/setupwizard" name="platform/frameworks/opt/setupwizard" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="materium" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="ng" />
   <project path="frameworks/opt/timezonepicker" name="LineageOS/android_frameworks_opt_timezonepicker" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/tv/tvsystem" name="platform/frameworks/opt/tv/tvsystem" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
@@ -782,11 +782,11 @@
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1" remote="aosp" />
   <project path="kernel/tests" name="kernel/tests" groups="vts,pdk" remote="aosp" />
-  <project path="libcore" name="android_libcore" groups="pdk" remote="materium" />
+  <project path="libcore" name="android_libcore" groups="pdk" remote="ng" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" remote="aosp" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="packages/apps/Bluetooth" name="LineageOS/android_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/Camera2" name="android_packages_apps_Camera2" groups="pdk-fs" remote="ng" />
   <project path="packages/apps/Car/Calendar" name="platform/packages/apps/Car/Calendar" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Car/Cluster" name="platform/packages/apps/Car/Cluster" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/Car/DebuggingRestrictionController" name="platform/packages/apps/Car/DebuggingRestrictionController" groups="pdk-fs" remote="aosp" />
@@ -811,16 +811,16 @@
   <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" groups="pdk-fs" remote="materium" />
-  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/Contacts" name="android_packages_apps_Contacts" groups="pdk-fs" remote="ng" />
+  <project path="packages/apps/Dialer" name="android_packages_apps_Dialer" groups="pdk-fs" remote="ng" />
   <project path="packages/apps/DocumentsUI" name="LineageOS/android_packages_apps_DocumentsUI" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/EmergencyInfo" name="platform/packages/apps/EmergencyInfo" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Gallery2" name="android_packages_apps_Gallery2" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/Gallery2" name="android_packages_apps_Gallery2" groups="pdk-fs" remote="ng" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/ImsServiceEntitlement" name="platform/packages/apps/ImsServiceEntitlement" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" groups="pdk-fs" remote="ng" />
   <project path="packages/apps/Nfc" name="LineageOS/android_packages_apps_Nfc" groups="apps_nfc,pdk-fs" />
   <project path="packages/apps/OnDeviceAppPrediction" name="platform/packages/apps/OnDeviceAppPrediction" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" remote="aosp" />
@@ -831,7 +831,7 @@
   <project path="packages/apps/SafetyRegulatoryInfo" name="platform/packages/apps/SafetyRegulatoryInfo" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/SampleLocationAttribution" name="platform/packages/apps/SampleLocationAttribution" groups="pdk-fs" remote="aosp" />
   <project path="packages/apps/SecureElement" name="platform/packages/apps/SecureElement" groups="apps_se,pdk-fs" remote="aosp" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="ng" />
   <project path="packages/apps/SettingsIntelligence" name="LineageOS/android_packages_apps_SettingsIntelligence" groups="pdk-fs" />
   <project path="packages/apps/Stk" name="LineageOS/android_packages_apps_Stk" groups="apps_stk,pdk-fs" />
   <project path="packages/apps/StorageManager" name="platform/packages/apps/StorageManager" groups="pdk-fs" remote="aosp" />
@@ -841,11 +841,11 @@
   <project path="packages/apps/TimeZoneUpdater" name="platform/packages/apps/TimeZoneUpdater" groups="pdk" remote="aosp" />
   <project path="packages/apps/ThemePicker" name="LineageOS/android_packages_apps_ThemePicker" groups="pdk-fs" />
   <project path="packages/apps/Traceur" name="platform/packages/apps/Traceur" groups="pdk-fs" remote="aosp" />
-  <project path="packages/apps/TvSettings" name="android_packages_apps_TvSettings" groups="pdk-fs" remote="materium" />
+  <project path="packages/apps/TvSettings" name="android_packages_apps_TvSettings" groups="pdk-fs" remote="ng" />
   <project path="packages/apps/TV" name="platform/packages/apps/TV" groups="pdk" remote="aosp" />
   <project path="packages/apps/UniversalMediaPlayer" name="platform/packages/apps/UniversalMediaPlayer" remote="aosp" />
   <project path="packages/apps/WallpaperPicker2" name="LineageOS/android_packages_apps_WallpaperPicker2" groups="pdk-fs" />
-  <project path="packages/inputmethods/LatinIME" name="android_packages_inputmethods_LatinIME" groups="pdk-fs" remote="materium" />
+  <project path="packages/inputmethods/LatinIME" name="android_packages_inputmethods_LatinIME" groups="pdk-fs" remote="ng" />
   <project path="packages/inputmethods/LeanbackIME" name="platform/packages/inputmethods/LeanbackIME" groups="pdk-fs" remote="aosp" />
   <project path="packages/modules/adb" name="LineageOS/android_packages_modules_adb" groups="pdk" />
   <project path="packages/modules/ArtPrebuilt" name="platform/packages/modules/ArtPrebuilt" groups="pdk" clone-depth="1" remote="aosp" />
@@ -893,13 +893,13 @@
   <project path="packages/services/Iwlan" name="platform/packages/services/Iwlan" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="packages/services/Mms" name="LineageOS/android_packages_services_Mms" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/services/Mtp" name="platform/packages/services/Mtp" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
-  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="materium" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="ng" />
   <project path="packages/services/Telephony" name="LineageOS/android_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/wallpapers/ImageWallpaper" name="platform/packages/wallpapers/ImageWallpaper" groups="pdk-fs" remote="aosp" />
   <project path="packages/wallpapers/LivePicker" name="LineageOS/android_packages_wallpapers_LivePicker" groups="pdk-fs" />
   <project path="pdk" name="platform/pdk" groups="pdk" remote="aosp" />
   <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" remote="aosp" />
-  <project path="prebuilts/abi-dumps/ndk" name="android_prebuilts_abi-dumps_ndk" groups="pdk-fs" remote="materium" />
+  <project path="prebuilts/abi-dumps/ndk" name="android_prebuilts_abi-dumps_ndk" groups="pdk-fs" remote="ng" />
   <project path="prebuilts/abi-dumps/platform" name="platform/prebuilts/abi-dumps/platform" groups="pdk-fs" clone-depth="1" remote="aosp" />
   <project path="prebuilts/abi-dumps/vndk" name="platform/prebuilts/abi-dumps/vndk" groups="pdk-fs" clone-depth="1" remote="aosp" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" groups="pdk-fs" clone-depth="1" remote="aosp" />
@@ -971,14 +971,14 @@
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" remote="aosp" />
   <project path="system/chre" name="platform/system/chre" groups="pdk" remote="aosp" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" remote="aosp" />
-  <project path="system/core" name="android_system_core" groups="pdk" remote="materium" />
+  <project path="system/core" name="android_system_core" groups="pdk" remote="ng" />
   <project path="system/extras" name="LineageOS/android_system_extras" groups="pdk" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" remote="aosp" />
   <project path="system/gsid" name="platform/system/gsid" groups="pdk" remote="aosp" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" groups="pdk" remote="aosp" />
   <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="pdk" remote="aosp" />
   <project path="system/incremental_delivery" name="platform/system/incremental_delivery" groups="pdk" remote="aosp" />
-  <project path="system/iorap" name="android_system_iorap" groups="pdk" remote="materium" />
+  <project path="system/iorap" name="android_system_iorap" groups="pdk" remote="ng" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" remote="aosp" />
   <project path="system/libartpalette" name="platform/system/libartpalette" groups="pdk" remote="aosp" />
   <project path="system/libbase" name="platform/system/libbase" groups="pdk" remote="aosp" />
@@ -991,7 +991,7 @@
   <project path="system/libvintf" name="platform/system/libvintf" groups="pdk" remote="aosp" />
   <project path="system/libziparchive" name="LineageOS/android_system_libziparchive" groups="pdk" />
   <project path="system/linkerconfig" name="platform/system/linkerconfig" groups="pdk" remote="aosp" />
-  <project path="system/logging" name="android_system_logging" groups="pdk" remote="materium" />
+  <project path="system/logging" name="android_system_logging" groups="pdk" remote="ng" />
   <project path="system/media" name="LineageOS/android_system_media" groups="pdk" />
   <project path="system/memory/libion" name="platform/system/memory/libion" groups="pdk" remote="aosp" />
   <project path="system/memory/libdmabufheap" name="platform/system/memory/libdmabufheap" groups="pdk" remote="aosp" />
@@ -1003,7 +1003,7 @@
   <project path="system/nfc" name="platform/system/nfc" groups="pdk" remote="aosp" />
   <project path="system/nvram" name="platform/system/nvram" groups="pdk" remote="aosp" />
   <project path="system/security" name="platform/system/security" groups="pdk" remote="aosp" />
-  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="materium" />
+  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="ng" />
   <project path="system/server_configurable_flags" name="platform/system/server_configurable_flags" groups="pdk" remote="aosp" />
   <project path="system/teeui" name="platform/system/teeui" groups="pdk" remote="aosp" />
   <project path="system/testing/gtest_extras" name="platform/system/testing/gtest_extras" groups="pdk" remote="aosp" />
@@ -1071,7 +1071,7 @@
   <include name="snippets/lineage.xml" />
   <include name="snippets/vdk.xml" />
   <include name="snippets/priv.xml" />
-  <include name="snippets/materium.xml" />
+  <include name="snippets/ng.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 </manifest>
