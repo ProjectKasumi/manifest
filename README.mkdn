@@ -1,6 +1,6 @@
-# Project Materium
+# droid-ng
 
-Proper readme will come later. If you have questions, visit us on [Telegram](https://t.me/ProjectMateriumChat) :)
+Proper readme will come later. If you have questions, visit us on [Telegram](https://t.me/chat_ng) :)
 
 
-```repo init -u https://github.com/ProjectMaterium/android.git -b materium-v2 && repo sync --force-sync -j8```
+```repo init -u https://github.com/droid-ng/android.git -b ng-v2 && repo sync --force-sync -j8```

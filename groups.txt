@@ -1,2 +1,2 @@
-mat_priv - private materium key repository
+ng_priv - private key repository
 nonfree - not free open source code
