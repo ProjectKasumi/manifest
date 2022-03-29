@@ -29,5 +29,7 @@
     <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" upstream="https://github.com/droid-ng/android_vendor_ng|ng-v2" />
     <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="kasumi" upstream="https://github.com/droid-ng/android_packages_apps_Settings|ng-v2" />
     <project path="packages/apps/Backgrounds" name="packages_apps_Backgrounds" remote="kasumi" upstream="https://github.com/droid-ng/android_packages_apps_Backgrounds|vdk-devel" />
+    <project path="vendor/lawnchair" name="vendor_lawnchair" remote="kasumi" />
+    <project path="vendor/prebuilts" name="vendor_prebuilts" remote="kasumi" />
 
 </manifest>
