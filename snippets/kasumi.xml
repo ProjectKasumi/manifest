@@ -5,7 +5,7 @@
     <remove-project name="android" />
     <remove-project name="android_droid-ng_ci" />
     <remove-project name="android_build" />
-    <remove-project name="android_vendor_ng" />
+    <remove-project name="android_vendor_droid-ng" />
     <remove-project name="android_packages_apps_Settings" />
     <remove-project name="android_packages_apps_Backgrounds" />
 
