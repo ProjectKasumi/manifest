@@ -3,4 +3,5 @@
 	<!--<project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" />-->
 	<project name="android/vendor_lawnchair" path="vendor/lawnchair" remote="yuki-no-git" />
 	<project name="android/vendor_prebuilts" path="vendor/prebuilts" remote="yuki-no-git" />
+	<project name="AICP/frameworks_opt_slimrecent" path="frameworks/opt/slimrecent" remote="github" revision="r11.1" clone-depth="1" />
 </manifest>
