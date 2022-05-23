@@ -1,6 +1,6 @@
 <manifest>
-	<project name="external_tuuru" path="external/tuuru" remote="kasumi" revision="kasumi-v1" upstream="https://git.halogenos.org/halogenOS/android_external_xos|XOS-12.0" mirror="https://github.com/ProjectKasumi/android_extermal_tuuru" />
+	<project name="external_tuuru" path="external/tuuru" remote="kasumi" revision="kasumi-v1" upstream="https://git.halogenos.org/halogenOS/android_external_xos|XOS-12.0" mirror="https://github.com/ProjectKasumi/external_tuuru" />
 	<!--<project name="ThankYouMario/proprietary_vendor_qcom_sdclang" path="prebuilts/clang/host/linux-x86/clang-sdllvm" remote="github" revision="ruby-12" />-->
-	<project name="vendor_lawnchair" path="vendor/lawnchair" remote="kasumi" mirror="https://github.com/ProjectKasumi/android_vendor_lawnchair" />
-	<project name="vendor_prebuilts" path="vendor/prebuilts" remote="kasumi" mirror="https://github.com/ProjectKasumi/android_vendor_prebuilts" />
+	<project name="vendor_lawnchair" path="vendor/lawnchair" remote="kasumi" mirror="https://github.com/ProjectKasumi/vendor_lawnchair" />
+	<project name="vendor_prebuilts" path="vendor/prebuilts" remote="kasumi" mirror="https://github.com/ProjectKasumi/vendor_prebuilts" />
 </manifest>
