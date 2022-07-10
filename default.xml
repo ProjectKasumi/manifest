@@ -51,7 +51,7 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="art" name="art" groups="pdk" remote="kasumi" upstream="https://github.com/LineageOS/android_art|lineage-18.1" mirror="https://github.com/ProjectKasumi/art" />
-  <project path="bionic" name="android_bionic" groups="pdk" remote="materium" revision="test" />
+  <project path="bionic" name="bionic" groups="pdk" remote="kasumi" upstream="https://github.com/LineageOS/android_bionic|lineage-18.1" mirror="https://github.com/ProjectKasumi/bionic" />
   <project path="bootable/recovery" name="bootable_recovery" remote="kasumi" groups="pdk" upstream="https://github.com/LineageOS/android_bootable_recovery|lineage-18.1" mirror="https://github.com/ProjectKasumi/bootable_recovery" />
   <project path="compatibility/cdd" name="platform/compatibility/cdd" groups="pdk" remote="aosp" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
@@ -592,7 +592,7 @@
   <project path="packages/apps/StorageManager" name="LineageOS/android_packages_apps_StorageManager" groups="pdk-fs" />
   <project path="packages/apps/Tag" name="LineageOS/android_packages_apps_Tag" groups="pdk-fs" />
   <project path="packages/apps/Test/connectivity" name="platform/packages/apps/Test/connectivity" groups="pdk" remote="aosp" />
-  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="materium" groups="pdk-fs" />
+  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="kasumi" groups="pdk-fs" upstream="https://github.com/LineageOS/android_packages_apps_ThemePicker|lineage-18.1" mirror="https://github.com/ProjectKasumi/packages_apps_ThemePicker" />
   <project path="packages/apps/Traceur" name="LineageOS/android_packages_apps_Traceur" groups="pdk-fs" />
   <project path="packages/apps/TvSettings" name="packages_apps_TvSettings" remote="kasumi" groups="pdk-fs" upstream="https://github.com/LineageOS/android_packages_apps_TvSettings|lineage-18.1" mirror="https://github.com/ProjectKasumi/packages_apps_TvSettings" />
   <project path="packages/apps/TV" name="platform/packages/apps/TV" groups="pdk" remote="aosp" />
