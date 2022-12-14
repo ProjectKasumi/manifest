@@ -455,7 +455,7 @@
   <project path="frameworks/libs/native_bridge_support" name="android_frameworks_libs_native_bridge_support" groups="pdk" remote="materium" />
   <project path="frameworks/libs/net" name="platform/frameworks/libs/net" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs" remote="materium" />
-  <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
+  <project path="frameworks/minikin" name="LineageOS/android_frameworks_minikin" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/ml" name="android_frameworks_ml" groups="pdk" remote="materium" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="kasumi" upstream="https://github.com/LineageOS/android_frameworks_native|lineage-18.1" mirror="https://github.com/ProjectKasumi/frameworks_native" />
