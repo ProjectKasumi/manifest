@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remotes -->
+  <remote  name="kasumi"
+           fetch="https://github.com/ProjectKasumi"
+           revision="kasumi-v2" />
+
+  <remote  name="devices"
+           fetch="https://github.com/Kasumi-Devices"
+           revision="kasumi-v2" />
+
+  <!-- Remove repos to replace -->
+  <remove-project name="LineageOS/android" />
+  <remove-project name="LineageOS/android_build" />
+  <remove-project name="LineageOS/android_lineage-sdk" />
+  <remove-project name="LineageOS/android_vendor_lineage" />
+
+  <!-- Our repos -->
+  <project path="android" name="manifest" remote="kasumi" />
+  <project path="build/make" name="build_make" remote="kasumi" groups="pdk" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="lineage-sdk" name="lineage-sdk" remote="kasumi" />
+  <project path="vendor/lineage" name="vendor_kasumi" remote="kasumi" />
+</manifest>
