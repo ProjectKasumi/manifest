@@ -17,6 +17,7 @@
   <!-- Remove repos to replace -->
   <remove-project name="LineageOS/android" />
   <remove-project name="LineageOS/android_build" />
+  <remove-project name="LineageOS/android_frameworks_base" />
   <remove-project name="LineageOS/android_lineage-sdk" />
   <remove-project name="LineageOS/android_packages_apps_Settings" />
   <remove-project name="LineageOS/android_vendor_lineage" />
@@ -31,9 +32,10 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
+  <project path="frameworks/base" name="frameworks_base" remote="kasumi" groups="pdk-cw-fs,pdk-fs" />
   <project path="lineage-sdk" name="lineage-sdk" remote="kasumi" />
   <project path="packages/apps/Settings" name="packages_apps_Settings" remote="kasumi" />
-  <project path="vendor/lineage" name="vendor_kasumi" remote="kasumi" />
+  <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" />
 
   <!-- Our own repos -->
   <project path="vendor/gcgop" name="vendor_gcgop" remote="kasumi" />
