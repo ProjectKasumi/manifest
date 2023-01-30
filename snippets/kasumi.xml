@@ -10,6 +10,10 @@
            fetch="https://github.com/Kasumi-Devices"
            revision="kasumi-v2" />
 
+  <remote  name="gitlab-gapps"
+           fetch="https://gitlab.com/MindTheGApps"
+           revision="tau" />
+
   <!-- Remove repos to replace -->
   <remove-project name="LineageOS/android" />
   <remove-project name="LineageOS/android_build" />
@@ -17,7 +21,7 @@
   <remove-project name="LineageOS/android_packages_apps_Settings" />
   <remove-project name="LineageOS/android_vendor_lineage" />
 
-  <!-- Our repos -->
+  <!-- Our replacements -->
   <project path="android" name="manifest" remote="kasumi" />
   <project path="build/make" name="build_make" remote="kasumi" groups="pdk" >
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -30,4 +34,10 @@
   <project path="lineage-sdk" name="lineage-sdk" remote="kasumi" />
   <project path="packages/apps/Settings" name="packages_apps_Settings" remote="kasumi" />
   <project path="vendor/lineage" name="vendor_kasumi" remote="kasumi" />
+
+  <!-- Our own repos -->
+  <project path="vendor/prebuilts" name="vendor_prebuilts" remote="kasumi" />
+
+  <!-- Other repos -->
+  <project path="vendor/gapps" name="vendor_gapps" remote="gitlab-gapps" />
 </manifest>
