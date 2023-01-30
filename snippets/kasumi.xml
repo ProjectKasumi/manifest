@@ -14,6 +14,7 @@
   <remove-project name="LineageOS/android" />
   <remove-project name="LineageOS/android_build" />
   <remove-project name="LineageOS/android_lineage-sdk" />
+  <remove-project name="LineageOS/android_packages_apps_Settings" />
   <remove-project name="LineageOS/android_vendor_lineage" />
 
   <!-- Our repos -->
@@ -27,5 +28,6 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="lineage-sdk" name="lineage-sdk" remote="kasumi" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="kasumi" />
   <project path="vendor/lineage" name="vendor_kasumi" remote="kasumi" />
 </manifest>
