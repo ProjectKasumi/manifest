@@ -36,6 +36,7 @@
   <project path="vendor/lineage" name="vendor_kasumi" remote="kasumi" />
 
   <!-- Our own repos -->
+  <project path="vendor/gcgop" name="vendor_gcgop" remote="kasumi" />
   <project path="vendor/prebuilts" name="vendor_prebuilts" remote="kasumi" />
 
   <!-- Other repos -->
