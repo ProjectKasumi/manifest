@@ -1,36 +1,111 @@
-LineageOS
-===========
+<div align="center">
+<img src="https://dl.ayokaacr.net/5:/Not%20ROM/KasumiBanner.png" />
+<h1>Project Kasumi</h1>
+</br>
+<strong><i> Another weebified custom ROM aiming to be a home for weebs. </i></strong>
+</br>
+<i> Based on LineageOS. </i>
+</br>
+
+-----
 
 Getting started
 ---------------
+To get started with Android/Project Kasumi, you'll need to get
+familiar with [Repo](https://source.android.com/source/using-repo.html) and [Version Control with Git](https://source.android.com/source/version-control.html).
 
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
+-----
 
-To initialize your local repository using the LineageOS trees, use a command like this:
-```
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0
-```
-Then to sync up:
-```
-repo sync
-```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
+Credits
+-------
+- [**LineageOS**](https://github.com/LineageOS)
+*********
+<a href="https://twitter.com/ProjectKasumi_">
+<img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge">
+</a>
+<a href="https://discord.gg/FRYUFtWDc6">
+<img src="https://img.shields.io/badge/Discord-purple?style=for-the-badge">
+</a>
 
+-----
 
-Submitting patches
+To initialize your local repository using your trees, use a command like this:  
+```
+repo init --depth=1 -u https://github.com/ProjectKasumi/manifest.git -b kasumi-v1
+```
+Then, to sync full source up:
+```
+repo sync -j$(nproc --all) --force-sync -c --no-clone-bundle --no-tags
+```
+And to start build:
+```
+source build/envsetup.sh
+lunch kasumi_<device>-userdebug
+m bandori
+```
+
+Also remember to check [build flags](https://github.com/ProjectKasumi/build_flags) for customizing your build further (E.g. shipping with Lawnchair instead of Trebuchet).
+
+-----
+
+Submitting Patches
 ------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
 
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
+Patches are always welcome! To submit one, email the lead developer
+at windowz414[at]projectkasumi[dot]xyz with your patch in this format;
 
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
+</div>
 
+Subject: `{<relevant repo name>} [PATCH] <commit subject>`
 
-Buildbot
---------
+```
+<commit description>
 
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
+Signed-off-by: Your Name <user@example.com>
 
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
+---
+<diff of your patch>
+```
 
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+Here's an example for you;
+
+Subject: `{vendor_kasumi} [PATCH] config/bootanimation: Filter space out when res is defined`
+
+```
+* We don't know if the maintainer added space after definition in
+  tree. (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
+                                 (Right here.) ^~~~~~~~~~~~~~~
+  This causes COPY_FILES to malfunction, so delete everything after
+  first space out. There shouldn't be a space before the actual
+  value anyway, Rest In Pepperoni if there is. xD
+
+Signed-off-by: Beru Shinsetsu <windowz414@gnuweeb.org>
+
+---
+ config/bootanimation.mk | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/config/bootanimation.mk b/config/bootanimation.mk
+index e75a716c..30cfc404 100644
+--- a/config/bootanimation.mk
++++ b/config/bootanimation.mk
+@@ -19,6 +19,13 @@ ifeq ($(TARGET_CUSTOM_BOOT_ANIMATION),)
+          $(warning TARGET_BOOT_ANIMATION_RES is invalid or undefined, using generic bootanimation)
+          TARGET_BOOT_ANIMATION_RES := 720
+      endif
++
++     # We don't know if the maintainer added space after definition in tree.
++     # (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
++     # This causes COPY_FILES to malfunction, so delete everything after
++     # first space out. There shouldn't be a space before the actual value
++     # anyway, Rest In Pepperoni if there is. xD
++     TARGET_BOOT_ANIMATION_RES := $(shell echo $(TARGET_BOOT_ANIMATION_RES) | sed -e 's/ .*//')
+      TARGET_CUSTOM_BOOT_ANIMATION := vendor/kasumi/prebuilt/common/media/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip
+ endif
+ 
+```
+
+Not necessary but you might as well want to attach the patch file in
+the email just in case. :)
+
+Example patch: https://github.com/ProjectKasumi/vendor_kasumi/commit/0b596f8eeec5ae5b0e74e88bdbdbc5a1b5953c1d.patch
