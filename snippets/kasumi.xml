@@ -47,6 +47,9 @@
   <project path="vendor/kasumi" name="vendor_kasumi" remote="kasumi" />
 
   <!-- Our own repos -->
+  <project path="buildflags" name="build_flags" remote="kasumi" >
+    <linkfile src="README.md" dest="flags.md" />
+  </project>
   <project path="vendor/gcgop" name="vendor_gcgop" remote="kasumi" />
   <project path="vendor/prebuilts" name="vendor_prebuilts" remote="kasumi" />
 
