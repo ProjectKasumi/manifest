@@ -37,20 +37,19 @@ Credits
 - [**Weeb Projekt**](https://github.com/WeebProject)
 - [**Wave Project**](https://github.com/Wave-Project)
 - [**PixelBoot**](https://github.com/PixelBoot)
-- [**halogenOS**](https://github.com/halogenOS)
 *********
 <a href="https://twitter.com/ProjectKasumi_">
-<img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=FFFFFF">
 </a>
-<a href="https://t.me/ProjectKasumi">
-<img src="https://img.shields.io/badge/Telegram-Channel-green?style=for-the-badge">
+<a href="https://discord.gg/FRYUFtWDc6">
+<img src="https://img.shields.io/badge/Discord_Server-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF">
 </a>
 
 -----
 
 To initialize your local repository using your trees, use a command like this:  
 ```
-repo init --depth=1 -u https://git.polycule.co/ProjectKasumi/android/manifest.git -b kasumi-v1 --git-lfs
+repo init --depth=1 -u https://github.com/ProjectKasumi/manifest.git -b kasumi-v1 --git-lfs --depth=1 --no-tags --no-clone-bundle
 ```
 Now we need to sync just enough repos to get "Kasumi's Tools" up:
 ```
@@ -63,10 +62,10 @@ reposync auto
 ```
 And to start build:
 ```
-play live kasumi_<devicecodename>
+play live kasumi_<devicecodename>-userdebug
 ```
 
-Also remember to check [build flags](https://git.polycule.co/ProjectKasumi/android/build_flags) for customizing your build further (E.g. shipping with Lawnchair instead of Trebuchet).
+Also remember to check [build flags](https://github.com/ProjectKasumi/build_flags) for customizing your build further (E.g. shipping with Lawnchair instead of Trebuchet).
 
 -----
 
@@ -91,43 +90,51 @@ Signed-off-by: Your Name <user@example.com>
 
 Here's an example for you;
 
-Subject: `{vendor_kasumi} [PATCH] config/bootanimation: Filter space out when res is defined`
+Subject: `{frameworks_base} [PATCH] PixelPropsUtils: Make CTS/Play Integrity pass again`
 
 ```
-* We don't know if the maintainer added space after definition in
-  tree. (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
-                                 (Right here.) ^~~~~~~~~~~~~~~
-  This causes COPY_FILES to malfunction, so delete everything after
-  first space out. There shouldn't be a space before the actual
-  value anyway, Rest In Pepperoni if there is. xD
+The logic behind CTS and Play Integrity has been updated today it now
+checks the product and model names against the fingerprint and if
+they do not match the CTS profile will fail.
 
-Signed-off-by: Beru Shinsetsu <windowz414@gnuweeb.org>
+Test: Boot, check for CTS and Play Integrity
 
+Change-Id: I089d5ef935bba40338e10c795ea7d181103ffd15
+Signed-off-by: Dyneteve <dyneteve@hentaios.com>
+Signed-off-by: Beru Hinode <windowz414@1337.lgbt>
 ---
- config/bootanimation.mk | 7 +++++++
- 1 file changed, 7 insertions(+)
+ .../android/internal/util/custom/PixelPropsUtils.java | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
 
-diff --git a/config/bootanimation.mk b/config/bootanimation.mk
-index e75a716c..30cfc404 100644
---- a/config/bootanimation.mk
-+++ b/config/bootanimation.mk
-@@ -19,6 +19,13 @@ ifeq ($(TARGET_CUSTOM_BOOT_ANIMATION),)
-          $(warning TARGET_BOOT_ANIMATION_RES is invalid or undefined, using generic bootanimation)
-          TARGET_BOOT_ANIMATION_RES := 720
-      endif
-+
-+     # We don't know if the maintainer added space after definition in tree.
-+     # (E.g. "TARGET_BOOT_ANIMATION_RES := 720 # Random thing)
-+     # This causes COPY_FILES to malfunction, so delete everything after
-+     # first space out. There shouldn't be a space before the actual value
-+     # anyway, Rest In Pepperoni if there is. xD
-+     TARGET_BOOT_ANIMATION_RES := $(shell echo $(TARGET_BOOT_ANIMATION_RES) | sed -e 's/ .*//')
-      TARGET_CUSTOM_BOOT_ANIMATION := vendor/kasumi/prebuilt/common/media/bootanimation-$(TARGET_BOOT_ANIMATION_RES).zip
- endif
+diff --git a/core/java/com/android/internal/util/custom/PixelPropsUtils.java b/core/java/com/android/internal/util/custom/PixelPropsUtils.java
+index 18aa51998e536..2ad7eccdcb192 100644
+--- a/core/java/com/android/internal/util/custom/PixelPropsUtils.java
++++ b/core/java/com/android/internal/util/custom/PixelPropsUtils.java
+@@ -179,18 +179,13 @@ private static void setPropValue(String key, Object value){
+     }
  
+     private static boolean isCallerSafetyNet() {
+-        return Arrays.stream(Thread.currentThread().getStackTrace())
++        return sIsGms && Arrays.stream(Thread.currentThread().getStackTrace())
+                 .anyMatch(elem -> elem.getClassName().contains("DroidGuard"));
+     }
+ 
+     public static void onEngineGetCertificateChain() {
+-        // Check stack for SafetyNet
+-        if (sIsGms && isCallerSafetyNet()) {
+-            throw new UnsupportedOperationException();
+-        }
+-
+-        // Check stack for Play Integrity
+-        if (sIsFinsky) {
++        if (isCallerSafetyNet() || sIsFinsky) {
++            Log.i(TAG, "Blocked key attestation sIsGms=" + sIsGms + " sIsFinsky=" + sIsFinsky);
+             throw new UnsupportedOperationException();
+         }
+     }
 ```
 
 Not necessary but you might as well want to attach the patch file in
 the email just in case. :)
 
-Example patch: https://git.polycule.co/ProjectKasumi/android/vendor_kasumi/commit/0b596f8eeec5ae5b0e74e88bdbdbc5a1b5953c1d.patch
+Example patch: https://github.com/ProjectKasumi/frameworks_base/commit/7dac8b45642e9db401cfdadabc16ebd95aa01cd8.patch
