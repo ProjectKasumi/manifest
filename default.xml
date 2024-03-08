@@ -29,10 +29,6 @@
            fetch="."
            revision="kasumi-v1" />
 
-  <remote  name="woomystructure"
-           fetch="https://gitea.woomy.be/StellaStructure/"
-           revision="kasumi-v1" />
-
   <default revision="refs/heads/lineage-18.1"
            remote="github"
            sync-c="true"
